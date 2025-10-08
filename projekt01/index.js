@@ -18,7 +18,7 @@ const server = createServer((req, res) => {
     if (req.method !== "GET") {
       res.writeHead(405, { "Content-Type": "text/plain" });
       res.end("Method not allowed\n");
-      console.log("cos sie nie zrobilo");
+      console.log("cos sie nie zro bilo");
     } else {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(index_html);
