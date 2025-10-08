@@ -37,6 +37,11 @@ const server = createServer((req, res) => {
       console.log("chyba zadzialalo");
     }
   }
+
+  if (!res.writableEnded) {
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Site not found!\n");
+  }
 });
 
 
