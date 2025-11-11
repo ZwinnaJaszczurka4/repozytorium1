@@ -29,6 +29,12 @@ app.get("/gramy", (req, res) => {
   });
 });
 
+app.get("/wygrana", (req, res) => {
+  res.render("wygrana", {
+    title: "Wygrales!",
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
 });
