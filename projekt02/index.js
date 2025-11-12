@@ -37,7 +37,6 @@ app.get("/hasla", (req, res) => {
   }
 });
 
-// Rozpoczęcie gry w wybranej kategorii
 app.get("/gramy/:kategoria", (req, res) => {
   const kategoriaId = req.params.kategoria;
   const haslo = losowanie(kategoriaId);
