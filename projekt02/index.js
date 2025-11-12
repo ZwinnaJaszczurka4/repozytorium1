@@ -15,7 +15,6 @@ const hasla_kategorie = {
 
 function losowanie(id) {
   const kategoria = hasla_kategorie[id];
-  if (!kategoria) return null;
   const hasla = kategoria.hasla;
   const cyferka = Math.floor(Math.random() * hasla.length);
   return hasla[cyferka];
@@ -23,41 +22,46 @@ function losowanie(id) {
 
 const app = express();
 
-
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
-
-
 app.use(express.static("public"));
 
-
 app.get("/hasla", (req, res) => {
-  res.render("hasla", {
-    title: "Wybierz kategorie",
-    kategorie: hasla_kategorie,
-  });
+  if (Object.keys(hasla_kategorie).length === 0) {
+    res.status(404).send("Brak dostępnych kategorii");
+  } else {
+    res.render("hasla", {
+      title: "Wybierz kategorię",
+      kategorie: hasla_kategorie,
+    });
+  }
 });
 
-
+// Rozpoczęcie gry w wybranej kategorii
 app.get("/gramy/:kategoria", (req, res) => {
   const kategoriaId = req.params.kategoria;
   const haslo = losowanie(kategoriaId);
 
   if (!haslo) {
-    return res.status(404).send("Nie znaleziono kategorii lub brak hasel");
+    res.status(404).send("Nie znaleziono kategorii lub nie ma hasel");
+  } else {
+    res.render("gramy", {
+      title: "Gramy",
+      haslo,
+      kategoria: hasla_kategorie[kategoriaId].name,
+    });
   }
-
-  res.render("gramy", {
-    title: "Gramy",
-    haslo,
-    kategoria: hasla_kategorie[kategoriaId].name,
-  });
 });
 
 app.post("/wygrana", (req, res) => {
   const { imie, haslo } = req.body;
-  res.render("wygrana", { title: "Wygrana!", imie, haslo });
+    res.render("wygrana", { title: "Wygrana!", imie, haslo });
 });
+
+app.use((req, res) => {
+  res.status(404).send("strona nie istnieje");
+});
+
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
 });
