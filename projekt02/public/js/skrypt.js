@@ -1,6 +1,6 @@
 let odsloniete = ""; 
 let licznik = 0;     
-
+let wykorzystane = [];
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,8 +20,9 @@ function start() {
 
 function sprawdz(){
     const hasloElement = document.getElementById("slowo"); 
-    const litera = document.getElementById("litera").value; 
+    const litera = document.getElementById("litera").value.toLowerCase();
     const haslo = hasloElement.dataset.haslo;
+    
 
     let trafiona = false;
 
@@ -34,11 +35,17 @@ function sprawdz(){
             trafiona = true;
         }
     }
+    
+    wykorzystane.push(litera);
 
     odsloniete = myArray.join("");
     document.getElementById("kreski").textContent = odsloniete;
 
     let wynik = document.getElementById("wynik");
+
+ 
+    document.getElementById("wyk").textContent = "Wykorzystane literki " +wykorzystane;
+
 
     if (trafiona) {
         wynik.textContent = "Gratulacje! Literka " + litera + " znajduje się w hasle!";

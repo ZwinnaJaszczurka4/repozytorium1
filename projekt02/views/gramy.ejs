@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <script defer src="/js/skrypt.js"></script>
 </head>
 <body>
@@ -16,6 +16,8 @@
     <input type="text" id="litera" maxlength="1"/>
     <button id="sprawdz" onclick="sprawdz()">Sprawdź</button>
     <p id="wynik"></p>
+
+    <p id="wyk"></p>
 
     <form action="/wygrana" method="POST" id="koniec" style="display:none;">
       <input type="hidden" name="imie" value="Gracz" />
