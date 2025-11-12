@@ -1,8 +1,11 @@
 let odsloniete = ""; 
 let licznik = 0;     
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
         start();
+        document.getElementById("koniec").style.display = 'none';
 });
 function start() {
     const hasloElement = document.getElementById("slowo");
@@ -45,5 +48,8 @@ function sprawdz(){
 
     if (licznik == haslo.length) {
         wynik.textContent = "Koniec gry! Wygrales!";
+        document.getElementById("sprawdz").style.display = 'none';
+        document.getElementById("litera").style.display = 'none';
+        document.getElementById("koniec").style.display = 'block';
     }
 }

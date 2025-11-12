@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script defer src="/js/skrypt.js"></script>
-  </head>
-  <body>
-    <main>
-      
-      <h1><%= title %></h1>
-      <h2 id="kreski"></h2>
-      <p id="slowo" data-haslo="<%= haslo %>"></p>
-      <p>Podaj literę:</p>
-      <input type="text" id="litera" maxlength="1" />
-      <button id="sprawdz" onClick="sprawdz()">Sprawdź</button>
-      <p id="wynik"></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script defer src="/js/skrypt.js"></script>
+</head>
+<body>
+  <main>
+    <h1><%= title %> - <%= kategoria %></h1>
+    <h2 id="kreski"></h2>
+    <p id="slowo" data-haslo="<%= haslo %>"></p>
+    <p>Podaj literke:</p>
+    <input type="text" id="litera" maxlength="1"/>
+    <button id="sprawdz" onclick="sprawdz()">Sprawdź</button>
+    <p id="wynik"></p>
 
-    </main>
-  </body>
+    <form action="/wygrana" method="POST" id="koniec" style="display:none;">
+      <input type="hidden" name="imie" value="Gracz" />
+      <input type="hidden" name="haslo" value="<%= haslo %>" />
+      <button type="submit">Zakończ</button>
+    </form>
+  </main>
+</body>
 </html>

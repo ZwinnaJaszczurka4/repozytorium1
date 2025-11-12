@@ -1,19 +1,21 @@
 import express from "express";
 
 const port = 8000;
+
 const hasla_kategorie = {
   "zwierzeta-domowe": {
     name: "Zwierzęta domowe",
-    hasla: ["kot", "pies", "mysz"],
+    hasla: ["kot", "pies", "mysz", "krowa", "byk"],
   },
   "kolory": {
     name: "Kolory",
-    hasla: ["czerwony", "zielony", "niebieski", "żółty", "czarny"],
+    hasla: ["czerwony", "zielony", "niebieski", "fioletowy", "czarny"],
   },
 };
 
 function losowanie(id) {
   const kategoria = hasla_kategorie[id];
+  if (!kategoria) return null;
   const hasla = kategoria.hasla;
   const cyferka = Math.floor(Math.random() * hasla.length);
   return hasla[cyferka];
@@ -21,19 +23,30 @@ function losowanie(id) {
 
 const app = express();
 
+
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
+
 
 app.use(express.static("public"));
 
+
 app.get("/hasla", (req, res) => {
-  const kategorie = db.prepare("SELECT id, name FROM kategorie").all();
-  res.render("hasla", { title: "Wybierz kategorię", kategorie });
+  res.render("hasla", {
+    title: "Wybierz kategorie",
+    kategorie: hasla_kategorie,
+  });
 });
 
 
 app.get("/gramy/:kategoria", (req, res) => {
   const kategoriaId = req.params.kategoria;
   const haslo = losowanie(kategoriaId);
+
+  if (!haslo) {
+    return res.status(404).send("Nie znaleziono kategorii lub brak hasel");
+  }
+
   res.render("gramy", {
     title: "Gramy",
     haslo,
@@ -41,12 +54,10 @@ app.get("/gramy/:kategoria", (req, res) => {
   });
 });
 
-app.get("/wygrana", (req, res) => {
-  res.render("wygrana", {
-    title: "Wygrales!",
-  });
+app.post("/wygrana", (req, res) => {
+  const { imie, haslo } = req.body;
+  res.render("wygrana", { title: "Wygrana!", imie, haslo });
 });
-
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
 });
