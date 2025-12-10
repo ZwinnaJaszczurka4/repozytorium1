@@ -1,0 +1,14 @@
+Gra Wisielec
+Możesz w niej: 
+-zgadywać hasla,
+-dodawac swoje kategorie oraz hasla,
+-edytowac je,
+-usuwac,
+
+Aby zagrac musisz pobrac biblioteke express za pomoca komendy
+
+npm install express
+
+w terminalu
+
+życzę milej gry :D
