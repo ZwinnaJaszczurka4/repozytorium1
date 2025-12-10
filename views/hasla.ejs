@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <br>
-    <ul>
-      <% hasla.forEach(function(haslo) { %>
-        <li><%= haslo %></li>
-      <% }) %>
-    </ul>
+    <main>
+      <h1><%= title %></h1>
+      <br><br>
+      <ul>
+        <% kategorie.forEach(cat => { %>
+          <li>
+            <a href="/gramy/<%= cat.id %>"><%= cat.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
   </body>
 </html>

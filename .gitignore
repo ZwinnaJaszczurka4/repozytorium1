@@ -1,3 +1,4 @@
 # npm external dependencies
 node_modules/
-*.log
+*.log*.sqlite
+*.sqlite
