@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1><%= title %></h1>
+      <br><br>
+      <ul>
+        <% kategorie.forEach(cat => { %>
+          <li>
+            <a href="/gramy/<%= cat.id %>"><%= cat.name %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
