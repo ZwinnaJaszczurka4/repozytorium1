@@ -11,4 +11,7 @@ npm install express
 
 w terminalu
 
+populacja danych: POPULATE_DB=1 node index.js
+
+
 życzę milej gry :D
