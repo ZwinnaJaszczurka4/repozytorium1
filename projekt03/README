@@ -13,5 +13,6 @@ w terminalu
 
 populacja danych: POPULATE_DB=1 node index.js
 
+npm install cookie-parser
 
 życzę milej gry :D
