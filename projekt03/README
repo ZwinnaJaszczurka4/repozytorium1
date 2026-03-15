@@ -15,4 +15,6 @@ populacja danych: POPULATE_DB=1 node index.js
 
 npm install cookie-parser
 
+npm install argon2
+
 życzę milej gry :D
