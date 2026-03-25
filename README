@@ -5,16 +5,13 @@ Możesz w niej:
 -edytowac je,
 -usuwac,
 
-Aby zagrac musisz pobrac biblioteke express za pomoca komendy
+PRZY PIERWSZYM URUCHOMIENIU:
 
-npm install express
+1) musisz pobrać bibliotekę express w terminalu za pomocą komendy npm install express
 
-w terminalu
+2) uruchomić aplikację za pomocą komendy npm run start
 
-populacja danych: POPULATE_DB=1 node index.js
+PRZY KAŻDYM KOLEJNYM WYSTARCZY node index.js
 
-npm install cookie-parser
-
-npm install argon2
 
 życzę milej gry :D
