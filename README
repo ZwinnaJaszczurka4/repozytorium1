@@ -9,7 +9,9 @@ PRZY PIERWSZYM URUCHOMIENIU:
 
 1) musisz pobrać bibliotekę express w terminalu za pomocą komendy npm install express
 
-2) uruchomić aplikację za pomocą komendy npm run start
+2) pobrać bibliotekę dotenv za pomocą komendy npm install dotenv
+
+3) uruchomić aplikację za pomocą komendy npm run start
 
 PRZY KAŻDYM KOLEJNYM WYSTARCZY node index.js
 
