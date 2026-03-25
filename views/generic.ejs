@@ -1,0 +1,12 @@
+<form action="<%- action %>" method="<%- method %>">
+<% fields.forEach(field => { %>
+  <label><%= field.display_name %></label>
+  <input type="<%- field.type %>" name="<%- field.name %>"
+         value="<%= data[field.name] || '' %>" 
+         <% if (field.required) { %> required <% } %>>
+  <% if (errors[field.name]) { %>
+    <span class="form-error"><%= errors[field.name] %></span>
+  <% } %>
+<% }) %>
+  <button><%= locals.submit_text || "Wyślij" %></button>
+</form>

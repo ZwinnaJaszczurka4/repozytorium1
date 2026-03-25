@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html data-theme="<%- app.theme %>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wisielec</title>
+    <link rel="stylesheet" href="/style.css" />
+    
+  </head>
+  <body>
+  
+    
+    <main>
+      <section class="controls"> 
+        <% if (user) { %>
+      <p>Jesteś zalogowany jako: <strong><%= user.username %></strong> | <a href="/auth/logout">Wyloguj</a></p>
+    <% } else { %>
+      <p>Nie jesteś zalogowany | <a href="/auth/login">Zaloguj się</a></p>
+    <% } %>
+      <a href="/settings/toggle-theme?next=<%- encodeURIComponent(page) %>">
+        <% if (app.theme === "dark") { %>
+        <strong>Ciemny</strong> | Jasny
+        <% } else { %>
+        Ciemny | <strong>Jasny</strong>
+        <% } %>
+      </a>
+
+    </section>
+    
+      <h1>Wisielec!</h1>
+     <p><a class="btn" href="/hasla">Graj!</a></p>
+      <p>lub</p>
+ <p><a class="btn" href="/formularz">Dodaj!</a></p>
+ </main>
+  </body>
+</html>

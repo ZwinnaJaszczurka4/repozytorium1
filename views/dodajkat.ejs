@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html data-theme="<%- app.theme %>" lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css" />
+  <title><%= title %></title>
+</head>
+<body>
+  <main>
+    <h1><%= title %></h1>
+
+    <form action="/formularz/kategoria/dodaj" method="POST">
+      <label>Nazwa kategorii:</label><br>
+      <input type="text" name="name" required><br><br>
+      <button type="submit">Dodaj kategorię</button>
+    </form>
+    <br>
+   
+
+    <a href="/hasla">Powrót do listy kategorii</a><br>
+    <a href="/">Powrót do strony głównej</a>
+  </main>
+</body>
+</html>
