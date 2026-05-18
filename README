@@ -11,9 +11,12 @@ PRZY PIERWSZYM URUCHOMIENIU:
 
 2) pobrać bibliotekę dotenv za pomocą komendy npm install dotenv
 
-3) uruchomić aplikację za pomocą komendy npm run start
+3) npm run generate_env
+
+4) uruchomić aplikację za pomocą komendy npm run start
 
 PRZY KAŻDYM KOLEJNYM WYSTARCZY node index.js
 
+*jesli chcesz wygenerowac konto admina uzyj komendy node createadmin.js (login: admin hasło: admin123)
 
 życzę milej gry :D

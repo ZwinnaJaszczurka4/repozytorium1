@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "generate_env": "./utils/generate_env.sh > .env",
+    "generate_env": "./utils/generate_env.sh > .env",
     "start": "POPULATE_DB=1 node index.js"
   },
   "author": "oliwia",
