@@ -17,7 +17,7 @@
 
     <p id="kreski"></p>
     <p>Podaj literkę:</p>
-    <input type="text" id="litera" maxlength="1" />
+    <input type="text" id="litera" maxlength="1" /><br>
     <button id="sprawdz" onClick="sprawdz()">Sprawdź</button>
     <p id="wynik"></p>
     <p id="wyk"></p>
@@ -28,6 +28,16 @@
       <button type="submit">Zakończ</button>
     </form>
   </main>
+  <script>
+  const input = document.getElementById("litera");
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); 
+      sprawdz();              
+    }
+  });
+</script>
   
 </body>
 </html>

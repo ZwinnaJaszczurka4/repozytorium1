@@ -19,6 +19,7 @@ html[data-theme='dark'] {
     --text-color-link: #77f;
 }
 
+
 body {
     display: flex;
     justify-content: center;
@@ -58,7 +59,10 @@ button{
     width: 50%;
     padding: 10px;
 }
-
+a{
+    text-decoration: none;
+    
+}
 details {
     margin-bottom: 12px;
 }
@@ -154,4 +158,8 @@ select:focus {
 .btn:hover {
     background-color: #1b5e20;
     transform: translateY(-1px);
+}
+
+.lewo{
+    float: left;
 }

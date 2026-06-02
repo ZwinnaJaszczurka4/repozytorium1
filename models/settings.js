@@ -1,8 +1,4 @@
 
-
-
-"use strict";
-
 const ONE_DAY = 24 * 60 * 60 * 1000;
 const ONE_MONTH = 30 * ONE_DAY;
 const THEME_COOKIE = "__Host-fisz-theme";

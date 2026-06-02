@@ -107,6 +107,7 @@ export function addCategory(id, name, userId) {
 }
 
 export function addWord(categoryId, text, userId) {
+  if (!categoryId) throw new Error("Missing categoryId");
   return db_ops.insert_word_by_category_id.get(categoryId, userId, text, userId);
 }
 

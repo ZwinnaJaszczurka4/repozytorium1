@@ -77,7 +77,7 @@ export async function login_post(req, res) {
       form.data["password"],
     );
     if (user_id == null) {
-      form.errors["username"] = "Niepoprawna nazwa użytkownika lub hasło";
+      form.errors["username"] = "<br>Niepoprawna nazwa użytkownika lub hasło";
     } else {
       createSession(user_id, res);
       res.redirect(nextUrl || "/formularz");

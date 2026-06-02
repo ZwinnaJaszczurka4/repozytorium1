@@ -86,7 +86,12 @@ app.get("/gramy/:kategoria", (req, res) => {
   const kategoria = flashcards.getCategoryPublic(kategoriaId);
 
   if (!kategoria) return res.status(404).send("nie znaleziono kategorii");
-  if (!kategoria.words) return res.status(404).send("nie ma hasel w kategorii");
+  if (!Array.isArray(kategoria.words) || kategoria.words.length === 0) {
+  return res.render("pustakategoria", {
+    title: "Pusta kategoria",
+    kategoria: kategoria.name
+  });
+}
 
   const losoweHaslo = kategoria.words[Math.floor(Math.random() * kategoria.words.length)].text;
 
@@ -179,6 +184,7 @@ app.post("/formularz/haslo/dodaj", auth.login_required, (req, res) => {
 });
 
 app.post("/formularz/haslo/edytuj", auth.login_required, (req, res) => {
+  console.log(req.body);
   const { id, categoryId, text } = req.body;
   if (req.user.is_admin) {
     flashcards.deleteWordAdmin(id);
