@@ -2,34 +2,34 @@
 
 
 
-###### Możesz w niej: 
+##### Możesz w niej: 
 
-###### \-zgadywać hasla,
+##### \-zgadywać hasla,
 
-###### \-dodawac swoje kategorie oraz hasla,
+##### \-dodawac swoje kategorie oraz hasla,
 
-###### \-edytowac je,
+##### \-edytowac je,
 
-###### \-usuwac,
+##### \-usuwac,
 
 
 
 #### **PRZY PIERWSZYM URUCHOMIENIU:**
 
-###### 
+##### 
 
-###### 1\) pobierz biblioteki za pomocą komend:
+##### 1\) pobierz biblioteki za pomocą komend:
 
-* ###### npm install express
-* ###### npm install dotenv
+* ##### npm install express
+* ##### npm install dotenv
 
-###### 
+##### 
 
-###### 2\) npm run generate\_env
+##### 2\) npm run generate\_env
 
-###### 
+##### 
 
-###### 3\) uruchom aplikację za pomocą komendy npm run start 
+##### 3\) uruchom aplikację za pomocą komendy npm run start 
 
 
 
